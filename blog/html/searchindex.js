@@ -1,0 +1,1 @@
+Search.setIndex({envversion:42,terms:{test:1,bloge:1},objtypes:{},objnames:{},filenames:["master","2013/12/19/first_post"],titles:["Sitemap","first post"],objects:{},titleterms:{post:1,sitemap:0,first:1}})
