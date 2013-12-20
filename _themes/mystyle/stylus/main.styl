@@ -1,0 +1,139 @@
+@import 'normalize'
+@import 'reset'
+
+// colors
+base-color = #FFF6D3
+light-bottom-color = #803D04
+bottom-color = #452C0A
+top-color = #2DADAC
+accent-color = #FF006F
+
+max-width = 1020px
+footer-height = 150px
+
+
+@font-face
+  font-family: kindness_gothic
+  src: url('./kindness_gothic.ttf') format('truetype')
+
+body, html
+  height: 100%;
+  background-color: base-color
+  color: bottom-color
+  font-family: kindness_gothic
+
+li
+  list-style-type: none
+
+a
+  color: inherit
+  text-decoration: none
+
+#container
+  width: 100%
+  margin: 0 auto
+  text-align: center
+
+  // 最小でも画面いっぱいにしてfooterを下に
+  height: auto !important;
+  min-height: 100%;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: footer-height
+
+.main-container
+  margin: 50px auto
+  padding-top: 10px
+  width: 100%
+  background-color: light-bottom-color
+  color: base-color
+
+
+header
+  margin: 0 auto
+  width: 100%
+  height: 250px
+  font-size: 140%
+  hgroup
+    margin: auto
+    background-color: top-color
+    color: base-color
+    .title
+      width: 30%
+      margin: 10px auto
+      border-left-style: solid
+      border-right-style: solid
+      border-width: 8px
+      border-color: base-color
+      border-radius: 100px
+  nav
+    margin: 60px auto
+    height: 80px
+    line-height: 80px
+    background-color: accent-color
+    color: base-color
+    vertical-align: middle
+    ul
+      height: inherit
+      line-height: inherit
+      vertical-align: middle
+    li
+      display: inline-block
+      margin: auto 10px
+
+.main article
+  margin: 30px auto
+  max-width: max-width
+  //footer
+  ul
+    line-height: 50px
+    vertical-align: middle
+  li
+    display: inline-block
+    margin: auto 10px
+
+.section
+  margin: 20px auto
+  min-height: 350px
+  text-align: left
+  font-size: 120%
+  line-height: 1.4em
+  > h1
+    margin: 20px auto 10px auto
+    font-size: 3.5em
+    line-height: 1.5em
+    letter-spacing: 0.2em
+    text-align: center !important
+
+aside.sidebar
+  background-color: bottom-color
+  padding: 20px 0
+
+.footer-container
+  width: 100%
+  height: footer-height
+  position: absolute
+  bottom: 0
+
+  text-align: center
+  .wrapper
+    position: relative
+    height: 100%
+    footer
+      position: absolute
+      bottom: 5px
+
+
+
+diameter-box-radius = 150px
+#searchbox
+  h1
+    margin: 20px auto
+    text-align: center
+    background-color: base-color
+    color: light-bottom-color
+    line-height: diameter-box-radius
+    width: diameter-box-radius
+    height: diameter-box-radius
+    border-radius: 100px
+

@@ -1,0 +1,54 @@
+{% extends "boilerplate/layout.html" %}
+
+{%- block header -%}
+{#- navigation should be contained in header! -#}
+  <header>
+    <hgroup>
+      <div class="title">
+        <h1><a href="{{ pathto(pages[0][0]) }}">{{ shorttitle|e }}</a></h1>
+          {%- if tagline -%}<h2>{{ tagline|e }}</h2>{%- endif -%}
+      </div>
+    </hgroup>
+    <nav>
+      <ul>
+        {%- block quicklinks -%}
+          {%- if rss_in_page_nav -%}
+          <li class="quicklink">{{ rss_link() }}</li>
+          {%- endif -%}
+        {%- endblock -%}
+        {% for page in pages -%}
+          <li class="main-nav">
+            <a href="{{ pathto(page[0]) }}">{{ page[1]|e }}</a>
+          </li>
+        {% endfor -%}
+          <li>
+            <a href="{{ pathto('archive') }}">Archives</a>
+          </li>
+      </ul>
+    </nav>
+  </header>
+{%- endblock -%}
+{%- block navigation -%}
+{%- endblock -%}
+
+
+{%- block document -%}
+      <article>
+        {%- block relbar1 -%}{{ relbar() }}{% endblock -%}
+        {% block body -%} {% endblock -%}
+        {%- block relbar2 -%}{{ relbar() }}{% endblock -%}
+      </article>
+{%- endblock -%}
+
+{%- block footer -%}
+  <div class="wrapper">
+    <footer>
+      {%- if show_copyright -%}
+        {% trans copyright=copyright|e -%}&copy; Copyright {{ copyright }}. {% endtrans -%}
+      {%- endif -%}
+      {%- if show_sphinx -%}
+        Powered by <a href="http://www.tinkerer.me/">Tinkerer</a> and <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+      {%- endif -%}
+    </footer>
+  </div>
+{%- endblock -%}
