@@ -11,10 +11,22 @@ accent-color = #FF006F
 max-width = 1020px
 footer-height = 150px
 
+line-bottom(op1=.2, op2=.3)
+  border-bottom: 1px solid rgba(0, 0, 0, op1);
+  -o-box-shadow: 0px 1px 0px rgba(69, 44, 10, op2)
+  -ms-box-shadow: 0px 1px 0px rgba(69, 44, 10, op2)
+  -moz-box-shadow: 0px 1px 0px rgba(69, 44, 10, op2)
+  -webkit-box-shadow: 0px 1px 0px rgba(69, 44, 10, op2)
+  box-shadow: 0px 1px 0px rgba(69, 44, 10, op2)
+
 
 @font-face
   font-family: kindness_gothic
   src: url('./kindness_gothic.ttf') format('truetype')
+
+@font-face
+  font-family: Benthem-Regular
+  src: url('./Benthem-Regular.otf') format('truetype')
 
 body, html
   height: 100%;
@@ -42,23 +54,27 @@ a
   padding-bottom: footer-height
 
 .main-container
-  margin: 50px auto
+  margin: 30px auto 0 auto
   padding-top: 10px
   width: 100%
-  background-color: light-bottom-color
-  color: base-color
-
+  //background-color: light-bottom-color
+  //color: base-color
+  background-color: base-color
+  color: bottom-color
 
 header
   margin: 0 auto
   width: 100%
-  height: 250px
+  height: 380px
   font-size: 140%
   hgroup
+    height: 300px
+    overflow: hidden
     margin: auto
     background-color: top-color
     color: base-color
     .title
+      overflow: hidden
       width: 30%
       margin: 10px auto
       border-left-style: solid
@@ -66,9 +82,13 @@ header
       border-width: 8px
       border-color: base-color
       border-radius: 100px
+      h1
+        font-family: Benthem-Regular
+        font-size: 3.5em
   nav
-    margin: 60px auto
+    margin: 0px auto
     height: 80px
+    width: 100%
     line-height: 80px
     background-color: accent-color
     color: base-color
@@ -78,8 +98,9 @@ header
       line-height: inherit
       vertical-align: middle
     li
+      width: 100px
       display: inline-block
-      margin: auto 10px
+      margin: auto 20px
 
 .main article
   margin: 30px auto
@@ -92,28 +113,48 @@ header
     display: inline-block
     margin: auto 10px
 
+timestamp-radius = 120px
+article
+  .timestamp
+    margin: 20px auto
+    text-align: center
+    background-color: light-bottom-color
+    color: base-color
+    line-height: timestamp-radius
+    width: timestamp-radius
+    height: timestamp-radius
+    border-radius: 100px
+
+
 .section
-  margin: 20px auto
+  margin: 40px auto
   min-height: 350px
   text-align: left
   font-size: 120%
   line-height: 1.4em
   > h1
-    margin: 20px auto 10px auto
+    margin: 20px auto 40px auto
     font-size: 3.5em
     line-height: 1.5em
     letter-spacing: 0.2em
     text-align: center !important
+    line-bottom()
 
 aside.sidebar
-  background-color: bottom-color
-  padding: 20px 0
+  background-color: light-bottom-color
+  color: base-color
+  margin: 30px auto 0 auto
+  padding: 50px 0
+  li
+    line-height: 1.5em
 
 .footer-container
   width: 100%
   height: footer-height
   position: absolute
   bottom: 0
+  background-color: bottom-color
+  color: base-color
 
   text-align: center
   .wrapper
@@ -123,6 +164,10 @@ aside.sidebar
       position: absolute
       bottom: 5px
 
+.post_separator
+  margin: 50px auto
+  height: 5px
+  //background-color: top-color
 
 
 diameter-box-radius = 150px
@@ -137,3 +182,15 @@ diameter-box-radius = 150px
     height: diameter-box-radius
     border-radius: 100px
 
+::selection
+  text-shadow: none
+  background: top-color
+  color: base-color
+
+input
+  height: 1.3em
+  background-color: lighten(base-color, 80%)
+input::-webkit-input-placeholder
+    color: lighten(light-bottom-color, 50%)
+input:-moz-placeholder
+    color: lighten(light-bottom-color, 50%)
