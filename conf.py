@@ -8,10 +8,10 @@ import tinkerer.paths
 # **************************************************************
 
 # Change this to the name of your blog
-project = u'My blog'
+project = u'Sushi Ninja'
 
 # Change this to the tagline of your blog
-tagline = 'All need is susi'
+tagline = u'That is all you need to eat'
 
 # Change this to the description of your blog
 description = 'I like susi'
