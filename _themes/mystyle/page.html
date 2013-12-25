@@ -3,6 +3,21 @@
 {%- block body -%}
     {{ timestamp(metadata.formatted_date) }}
     {{ body }}
+    <div id="socials"></div>
+    <script type="text/javascript" charset="utf-8">
+      !function(doc){
+        doc.getElementById('socials').appendChild(
+            function() {
+              var twi = Social.twitter();
+              var icon = doc.createElement('i');
+              icon.className = "fa fa-twitter-square fa-3x";
+              twi.appendChild(icon);
+              return twi;
+            }()
+        )
+      }(document);
+    </script>
+
     {{ post_meta(metadata) }}
     {{ comments }}
 {%- endblock -%}

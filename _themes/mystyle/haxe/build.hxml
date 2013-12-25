@@ -1,0 +1,9 @@
+-js ../static/social.js
+-main Main
+##dead code elimination
+#-dce full
+
+#--next
+#
+#-js social.js
+#-main Social
