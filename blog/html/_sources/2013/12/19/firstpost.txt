@@ -6,6 +6,6 @@ test first bloging
 
 
 .. author:: default
-.. categories:: none
-.. tags:: none
+.. categories:: misc
+.. tags:: misc
 .. comments::
