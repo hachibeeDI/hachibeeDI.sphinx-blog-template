@@ -269,7 +269,7 @@ header hgroup {
 }
 header hgroup .title {
   overflow: hidden;
-  width: 30%;
+  width: 920px;
   margin: 10px auto;
   border-left-style: solid;
   border-right-style: solid;
