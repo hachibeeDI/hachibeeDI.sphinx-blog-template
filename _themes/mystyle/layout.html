@@ -1,5 +1,14 @@
 {% extends "boilerplate/layout.html" %}
 
+{%- macro post_meta_without_author(metadata, comment_count_code=None) -%}
+    <div class="postmeta">
+        {{ category_list(metadata.filing["categories"]) }}
+        {{ tag_list(metadata.filing["tags"]) }}
+        {{ comment_count(comment_count_code) }}
+        {%- block post_meta_extra -%}{%- endblock -%}
+    </div>
+{%- endmacro -%}
+
 {%- block header -%}
 {#- navigation should be contained in header! -#}
   <header>
