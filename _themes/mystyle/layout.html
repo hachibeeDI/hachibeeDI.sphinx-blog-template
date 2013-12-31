@@ -48,13 +48,29 @@
 {% endblock -%}
 
 
-{%- block document -%}
-      <article>
+{%- block content -%}
+    <div class="main wrapper clearfix">
+    {%- block document -%}
+        <article>
         {%- block relbar1 -%}{{ relbar() }}{% endblock -%}
         {% block body -%} {% endblock -%}
         {%- block relbar2 -%}{{ relbar() }}{% endblock -%}
-      </article>
+        </article>
+    {%- endblock -%}
+    {%- if render_sidebar -%}
+        <aside class="bottom-content">
+        {%- if sidebars != None -%}
+            {%- for sidebartemplate in sidebars -%}
+            <section>
+            {%- include sidebartemplate -%}
+            </section>
+            {%- endfor -%}
+        {%- endif -%}
+        </aside>
+    {%- endif -%}
+    </div>
 {%- endblock -%}
+
 
 {%- block footer -%}
   <div class="wrapper">

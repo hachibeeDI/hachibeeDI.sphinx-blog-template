@@ -1,11 +1,24 @@
 # -*- coding: utf-8 -*-
 
+'''
+via:
+    http://kyon-mm.bitbucket.org/blog/html/2013/05/20/start_tinkerer_on_bitbucket.html
+    http://blog.shomah4a.net/2013/02/26/setup_tinkerer.html
+    http://d.hatena.ne.jp/rudi/20120106/1325861293
+'''
+
 import tinkerer
 import tinkerer.paths
+
+
+def setup(app):
+    app.add_config_value(name='gravater_id', default='nongravater', rebuild='html')
 
 # **************************************************************
 # TODO: Edit the lines below
 # **************************************************************
+
+language = 'en'
 
 # Change this to the name of your blog
 project = u'Sushi Ninja'
@@ -14,10 +27,13 @@ project = u'Sushi Ninja'
 tagline = u'That is all you need to eat'
 
 # Change this to the description of your blog
-description = 'I like susi'
+description = 'I am a beginning learner of English, So I apologize for any confusion.'
 
 # Change this to your name
 author = 'OGURA Daiki'
+mail_address = '8hachibee125@gmail.com'
+import md5
+gravater_id = str(md5.new(mail_address).hexdigest())
 
 # Change this to your copyright string
 copyright = '2013, ' + author
@@ -73,7 +89,7 @@ exclude_patterns = ["_templates/*", "drafts/*", ]
 
 # Add templates to be rendered in sidebar here
 html_sidebars = {
-    "**": ["recent.html", "searchbox.html", "categories.html", "tags.html", ]
+    "**": ["searchbox.html", "author.html", "recent.html", "categories.html", "tags.html", ]
 }
 
 # **************************************************************

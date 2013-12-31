@@ -12,7 +12,7 @@ max-width = 1020px
 footer-height = 150px
 
 line-bottom(op1=.2, op2=.3)
-  border-bottom: 1px solid rgba(0, 0, 0, op1);
+  border-bottom: 1px solid rgba(0, 0, 0, op1)
   -o-box-shadow: 0px 1px 0px rgba(69, 44, 10, op2)
   -ms-box-shadow: 0px 1px 0px rgba(69, 44, 10, op2)
   -moz-box-shadow: 0px 1px 0px rgba(69, 44, 10, op2)
@@ -29,7 +29,7 @@ line-bottom(op1=.2, op2=.3)
   src: url('./Benthem-Regular.otf') format('truetype')
 
 body, html
-  height: 100%;
+  height: 100%
   background-color: base-color
   color: bottom-color
   font-family: kindness_gothic
@@ -47,10 +47,10 @@ a
   text-align: center
 
   // 最小でも画面いっぱいにしてfooterを下に
-  height: auto !important;
-  min-height: 100%;
-  position: relative;
-  overflow: hidden;
+  height: auto !important
+  min-height: 100%
+  position: relative
+  overflow: hidden
   padding-bottom: footer-height
 
 .main-container
@@ -73,6 +73,7 @@ header
     margin: auto
     background-color: top-color
     color: base-color
+    opacity: 0.9
     .title
       overflow: hidden
       width: max-width - 100px
@@ -101,6 +102,8 @@ header
       width: 100px
       display: inline-block
       margin: auto 20px
+      &:hover
+        opacity: 0.8
 
 .main article
   margin: 30px auto
@@ -125,6 +128,9 @@ article
     height: timestamp-radius
     border-radius: 100px
 
+.postmeta
+  div
+    line-height: 19px
 
 .section
   margin: 40px auto
@@ -140,7 +146,7 @@ article
     text-align: center !important
     line-bottom()
 
-aside.sidebar
+aside.bottom-content
   background-color: light-bottom-color
   color: base-color
   margin: 30px auto 0 auto
@@ -173,7 +179,7 @@ aside.sidebar
 diameter-box-radius = 150px
 #searchbox
   h1
-    margin: 20px auto
+    margin: 10px auto
     text-align: center
     background-color: base-color
     color: light-bottom-color
@@ -181,6 +187,24 @@ diameter-box-radius = 150px
     width: diameter-box-radius
     height: diameter-box-radius
     border-radius: 100px
+
+.profile
+  width: max-width - 300px
+  margin: 40px auto auto auto
+  overflow: hidden
+#about-me
+  float: left
+  width: 55%
+  margin: 70px auto auto auto
+  text-align: center
+#coderwall-badge
+  width: 40%
+  margin: auto
+  float: right
+  img
+    width: 80px
+    height: 80px
+    margin-bottom: 20px
 
 ::selection
   text-shadow: none

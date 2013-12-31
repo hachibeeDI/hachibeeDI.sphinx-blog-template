@@ -1,0 +1,38 @@
+
+{#-
+<img src="https://s.gravatar.com/avatar/{{ gravaterid }}?s=80" alt="profile-img">
+変数参照する方法がわかんなくてむかつく。あとでそーすよむ
+-#}
+
+<div class="widget profile">
+  <h1>About me</h1>
+  <article id="about-me">
+    <img
+    src="https://s.gravatar.com/avatar/ec2466052bb02603cbd59a4c8a59e1fa?s=120"
+    alt="myprofile">
+    <p>Name: OGURA Daiki</p>
+    <p id="description">{{ description }}</p>
+    <ul>
+     <li><a href="https://github.com/hachibeeDI" >GitHub</a></li>
+     <li><a href="http://hachibeechan.hateblo.jp/" >JapaneseBlog</a></li>
+    </ul>
+  </article>
+  <article id="coderwall-badge">
+    <h3><a href="https://coderwall.com/hachibeedi" >coderwall</a></h3>
+  </article>
+  <script type="text/javascript">
+    function display_coderwall(args) {
+      console.log(args);
+      var badges = args["data"]["badges"];
+      var placeholder = document.getElementById('coderwall-badge');
+      for ( var i = 0; i < badges.length; i++ ) {
+        var badge = document.createElement('img');
+        badge.setAttribute('src', badges[i].badge);
+        badge.setAttribute('data-desc', badges[i].description);
+        badge.setAttribute('title', badges[i].description);
+        placeholder.appendChild(badge);
+      }
+    }
+  </script>
+  <script src="http://coderwall.com/hachibeeDI.json?callback=display_coderwall"/></script>
+</div>
